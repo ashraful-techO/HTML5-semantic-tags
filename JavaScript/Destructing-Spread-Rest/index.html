@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring & Spread/Rest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Destructuring & Spread/Rest</h1>
+    <p>Open console to check the exapmles</p>
+
+    <ol type="A" class="tight-list">
+      <li><b>Destruct:</b> Extract values</li>
+      <li><b>Spread:</b> Copy or expand values</li>
+      <li><b>Rest:</b> Collect remaining values</li>
+    </ol>
+
+    <pre>
+      <h1>Destruct</h1>
+     <ol type="I">
+       <li><b>Array Destruct:</b> <code>const numbers = [1,2,3,4];
+        const [a,b,c,d] = numbers;
+        console.log(a,b,c,d);</code></li>
+        <li><b>Obejct Distruct: </b><code>const user = { name: "Shanto", age: 27 };
+        const {name, age} = user;
+        console.log(name,age); //Shanto 27
+      </code></li>
+        <li><b>Function Distruct: </b><code>function greet({name}){
+        console.log(`Hello ${name}`);
+        }
+        greet({name: "Shanto"}) //Hello Shanto;
+      </code></li>
+     </ol>
+      <h1>Spread</h1>
+     <ol type="I">
+      <li><b>Array Spread: </b><code>const arr1 = [1,2];
+        const arr2 = [...arr1,3,4];
+        console.log(arr2); //1,2,3,4</code></li>
+      <li><b>Object Spread: </b><code>const obj1 = { name1: "shanto"};
+      const obj2 = {...obj1, name2: "nasif"};
+      console.log(obj2); //{name1: 'shanto', name2: 'nasif'}</code></li>
+      <li><b>Function Spread: </b> <code>const nums = [1,25,4];
+console.log(Math.max(...nums)); //25</code></li>
+     </ol>
+     
+     <h1>Rest</h1>
+     <ol type="I">
+      <li><b>Rest in Function: </b> <code>function sum(...numbers){
+  return numbers.reduce((acc,n)=> acc+n,0);
+}
+      console.log(sum(1,2,3));//6</code></li>
+      <li><b>Rest in Array</b> <code>const [first, ...rest] = [10, 20, 30, 40];
+      console.log(first); // 10
+      console.log(rest);  // [20, 30, 40]</code></li>
+<li><b>Rest in Obeject</b> <code>
+const { name, ...rest } = { name: 'Sam', age: 30, city: 'NY' };
+console.log(name); // Sam
+console.log(rest); // { age: 30, city: 'NY' }</code></li>
+     </ol>
+
+    </pre>
+
+    <script src="script.js"></script>
+  </body>
+</html>
