@@ -1,0 +1,38 @@
+h1{
+    border: 1px solid black;
+    height: 80px;
+    width: 250px;
+}
+
+
+
+h1:hover{
+        background-color: lightblue;
+        transition-duration: 1s;
+    }
+
+body{
+    background-color: aqua;
+}
+
+@media screen and (max-width: 480px) {
+    body{
+        background-color: lightgreen;
+    }
+    h1{
+        position: relative;
+        top: 150px;
+        left: 150px;
+    }
+
+    h1:hover{
+        background-color: bisque;
+        transition-duration: 1.5s;
+    }
+
+    h1::before{
+        content: "Hi, 👋 ";
+    }
+}
+
+
