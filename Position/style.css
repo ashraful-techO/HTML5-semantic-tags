@@ -1,0 +1,39 @@
+.container{
+    border: 1px solid red;
+    /* position: relative; */
+}
+
+.container > div{
+    box-sizing: border-box;
+    height: 80px;
+    width: 100px;
+    border: 1px solid black;
+    gap: 20px;
+    
+}
+
+.static{
+    position: static;
+}
+
+.relative{
+    position: relative;
+    background-color: blueviolet;
+    top: 50px;
+    left: 50px;
+
+}
+
+.fixed{
+    /* position: fixed; */
+    background-color: aqua;
+}
+
+.absolute{
+    position: absolute;
+    background-color: brown;
+    top: 0px;
+    right: 50px;
+    left: 10px;
+
+}
