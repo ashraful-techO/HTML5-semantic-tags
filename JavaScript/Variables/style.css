@@ -1,0 +1,16 @@
+body{
+    width: 90%;
+    margin: 20px auto; 
+    border: 1px solid blue;
+    padding: 10px;
+    text-align: center;
+}
+
+.tight-list {
+  list-style-position: inside !important; 
+  padding-left: 0 !important;        
+}
+
+.tight-list li {
+  text-indent: -1em !important;      
+}
