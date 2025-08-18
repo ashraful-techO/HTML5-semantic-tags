@@ -24,7 +24,7 @@ Welcome to this simple practice project where I worked with JavaScript array met
 
 ## Product Data
 
-```js```
+```js
 const products = [
   { id: 1, name: "Laptop", price: 1200, category: "electronics", rating: 4.5 },
   { id: 2, name: "Phone", price: 800, category: "electronics", rating: 4.2 },
