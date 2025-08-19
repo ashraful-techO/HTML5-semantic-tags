@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Post Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Responsive Blog Post Dashboard</h1>
+    </header>
+
+    <nav>
+    <button data-category="all">All</button>
+    <button data-category="tech">Tech</button>
+    <button data-category="lifestyle">Lifestyle</button>
+    <button data-category="travel">Travel</button>
+  </nav>
+
+  <main>
+    <section id="post-list"></section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-body"></p>
+        <p id="modal-author"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 by blog</p>
+  </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
