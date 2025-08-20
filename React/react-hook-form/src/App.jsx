@@ -1,67 +1,53 @@
-import './App.css';
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+
+const schema = Yup.object({
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be 6+ characters")
+    .required("Password is required"),
+});
 
 function App() {
-  const{
+  const {
     register,
     handleSubmit,
-    formState: {errors},
-  } = useForm();
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-  const onSubmit = (data) =>{
+  const onSubmit = (data) => {
     alert("Form submitted!");
     console.log(data);
   };
 
   return (
-    <div style={{padding: "2rem"}}>
-      <h1>Form with react-hook-form</h1>
+    <div style={{ padding: "2rem" }}>
+      <h1>Login Form (React Hook Form + Yup)</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Name:</label>
-          <input
-          {...register("name", {required: "Name is required"})}
-          />
-          {errors.name && <p style={{color: "red"}}>{errors.name.message}</p>}
-        </div>
-
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div>
           <label>Email:</label>
-          <input 
-          {...register("email",{
-            required: "Email is required",
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: "Invalid email address",
-            },
-          })}
-          />
-          {errors.email && <p style={{color: "red"}}>{errors.email.message}</p>}
+          <input {...register("email")} />
+          {errors.email && <p style={{ color: "red" }}>{errors.email.message}</p>}
         </div>
 
         <div>
           <label>Password:</label>
-          <input 
-          {...register("password", {
-            required: "Password is not valid",
-            minLength:{
-              value: 6,
-              message: "Must be at least 6 characters",
-            },
-          })}
-          />
+          <input type="password" {...register("password")} />
           {errors.password && (
-            <p style={{color:"red"}}>{errors.password.message}</p>
+            <p style={{ color: "red" }}>{errors.password.message}</p>
           )}
         </div>
 
-          <button type="submit" style={{ marginTop: "1rem" }}>
+        <button type="submit" style={{ marginTop: "1rem" }}>
           Submit
         </button>
       </form>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
