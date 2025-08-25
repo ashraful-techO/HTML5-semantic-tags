@@ -1,50 +1,44 @@
 import {
-  Controller,
-  Post,
   Body,
-  Param,
-  Get,
-  Put,
+  Controller,
   Delete,
+  Put,
+  Get,
+  Param,
+  Post,
 } from '@nestjs/common';
-import { CreateUserDTO } from './dto/create-user.dto';
-
-let USERS: CreateUserDTO[] = [];
+import { UsersService } from './users.service';
+import { CreateUserDTO } from './create-user.dto';
 
 @Controller('/users')
 export class UsersController {
+  constructor(private usersService: UsersService) {}
+
   @Post()
-  addUser(@Body() createUserDto: CreateUserDTO) {
-    USERS.push(createUserDto);
-    return 'User Added';
+  createUser(@Body() createUserDto: CreateUserDTO) {
+    this.usersService.addUser(createUserDto);
+    return { message: 'USER ADDED' };
   }
 
   @Get()
-  getUsers() {
-    return USERS;
+  findAllUsers() {
+    return this.usersService.getUsers();
   }
 
   @Get(':id')
-  getUser(@Param('id') id: number) {
-    return USERS.find((u) => +u.id === +id);
+  findUser(@Param('id') id: number) {
+    return this.usersService.getUser(+id);
   }
 
   @Put(':id')
-  updateUser(@Param('id') id: number, @Body() updateUserDTO: CreateUserDTO) {
-    const userIdx = USERS.findIndex((u) => u.id === +id);
-
-    if (!userIdx) {
-      return { message: 'User not found' };
-    }
-
-    USERS[userIdx] = updateUserDTO;
-    return { message: 'User updated' };
+  updateUser(@Param(':id') id: number, @Body() updateUserDto: CreateUserDTO) {
+    this.usersService.updateUser(+id, updateUserDto);
+    return { message: 'USER UPDATED' };
   }
 
   @Delete(':id')
   deleteUser(@Param('id') id: number) {
-    USERS = USERS.filter((user) => +user.id === +id);
-
-    return { message: 'User deleted' };
+    this.usersService.deleteUser(+id);
+    return { message: 'USER DELETED' };
   }
 }
