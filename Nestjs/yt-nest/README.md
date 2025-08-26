@@ -44,6 +44,80 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Examples
+<ol type="1">
+
+<li><h1>Create a User (POST)</h1></li>
+<code><b>POST</b> http://localhost:3000/users</code>
+
+```bash
+{
+  "id": 1,
+  "name": "Shanto",
+  "age": 22
+}
+```
+
+```bash
+{
+  "message": "USER ADDED"
+}
+```
+  
+<li><h1>Get All Users (GET)</h1></li>
+<code><b>GET</b> http://localhost:3000/users</code>
+
+```bash
+[
+  {
+    "id": 1,
+    "name": "Shanto",
+    "age": 22
+  }
+]
+```
+
+<li><h1>Get Single User (GET by ID)</h1></li>
+<code><b>GET</b> http://localhost:3000/users/1</code>
+
+```bash
+{
+  "id": 1,
+  "name": "Shanto",
+  "age": 22
+}
+```
+
+<li><h1>Update a User (PUT)</h1></li>
+<code><b>PUT</b> http://localhost:3000/users/1</code>
+
+```bash
+{
+  "id": 1,
+  "name": "Ashraful Islam Shanto",
+  "age": 22
+}
+```
+
+```bash
+{
+  "message": "USER UPDATED"
+}
+```
+
+<li><h1>Delete a User (DELETE)</h1></li>
+<code><b>DELETE</b> http://localhost:3000/users/1</code>
+
+```bash
+{
+  "message": "USER DELETED"
+}
+```
+
+</ol>
+
+
+
 ## Run tests
 
 ```bash
