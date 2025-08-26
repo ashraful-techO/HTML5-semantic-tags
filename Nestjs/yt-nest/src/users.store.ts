@@ -7,7 +7,6 @@ interface User {
 }
 
 @Injectable({ scope: Scope.TRANSIENT })
-
 export class UserStore {
   private store = new Map<number, User>();
 

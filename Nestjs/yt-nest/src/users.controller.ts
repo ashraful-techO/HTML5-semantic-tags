@@ -12,6 +12,7 @@ import { CreateUserDTO } from './create-user.dto';
 
 @Controller('/users')
 export class UsersController {
+  
   constructor(private usersService: UsersService) {}
 
   @Post()
@@ -31,7 +32,7 @@ export class UsersController {
   }
 
   @Put(':id')
-  updateUser(@Param(':id') id: number, @Body() updateUserDto: CreateUserDTO) {
+  updateUser(@Param('id') id: number, @Body() updateUserDto: CreateUserDTO) {
     this.usersService.updateUser(+id, updateUserDto);
     return { message: 'USER UPDATED' };
   }
