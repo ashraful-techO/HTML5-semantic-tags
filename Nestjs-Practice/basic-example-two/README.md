@@ -100,7 +100,7 @@ src/
 <ul>
 <li>Custom provider (RandomIdProvider)</li>
 <li>Multiple route params (:userId/orders/:orderId)</li>
-<li>Multiple query params (?age=25&role=admin)<li>
+<li>Multiple query params (?age=25&role=admin)</li>
 <li>Swagger docs (@ApiTags, @ApiOperation, @ApiQuery)</li>
 </ul>
 
