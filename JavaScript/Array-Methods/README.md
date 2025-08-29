@@ -28,9 +28,9 @@ Filtered Electronics (rating > 4.0): [
 <pre>
   <code>
     Uppercase Names: [ "LAPTOP", "PHONE", "T-SHIRT", "SHOES", "MONITOR" ]
+  
     Filtered Electronics (rating > 4.0): [
->>>>>>> 249f106e63dec56d89eda91bb108fc990a3038bf
-  { id: 1, name: "Laptop", price: 1200, category: "electronics", rating: 4.5 },
+    { id: 1, name: "Laptop", price: 1200, category: "electronics", rating: 4.5 },
   { id: 2, name: "Phone", price: 800, category: "electronics", rating: 4.2 },
   { id: 5, name: "Monitor", price: 300, category: "electronics", rating: 4.3 },
 ]
@@ -41,15 +41,13 @@ First Low Rated Product (rating < 4.0):
 { id: 4, name: "Shoes", price: 60, category: "clothing", rating: 3.8 }
 
 Clothing Products (rating >= 4.0, lowercase names): ["t-shirt"]
-<<<<<<< HEAD
+
 =======
 </code>
 </pre>
->>>>>>> 249f106e63dec56d89eda91bb108fc990a3038bf
+
 
 ## Key Learnings
-
-<<<<<<< HEAD
 
 Utilized modern JavaScript arrow functions for brevity.
 
@@ -68,4 +66,4 @@ Practiced fundamental functional programming concepts in JavaScript.
 
 <li>Practiced functional programming concepts in JavaScript.</li>
 </ol>
->>>>>>> 249f106e63dec56d89eda91bb108fc990a3038bf
+
